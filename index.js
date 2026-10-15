@@ -27,7 +27,7 @@ app.use(express.json());
 
 async function getTeams(id) {
   try {
-    const response = await fetch(`https://www.fotmob.com/api/lineup-builder/prefilled-team/${id}`);
+    const response = await fetch(`https://www.fotmob.com/api/data/lineup-builder/prefilled-team/${id}`);
     return await response.json();
   } catch (error) {
     console.error("Error fetching teams:", error);
@@ -36,7 +36,7 @@ async function getTeams(id) {
 
 async function searchTeamsAndPlayers(term) {
   try {
-    const response = await fetch(`https://www.fotmob.com/api/search/suggest?hits=50&lang=en&term=${term}`);
+    const response = await fetch(`https://www.fotmob.com/api/data/search/suggest?hits=50&lang=en&term=${term}`);
     return await response.json();
   } catch (error) {
     console.error("Error searching teams and players:", error);
